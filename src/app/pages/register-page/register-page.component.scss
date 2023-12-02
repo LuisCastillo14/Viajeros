@@ -1,0 +1,87 @@
+
+.container {
+    background-image: url('/assets/img2-2.jpg'); // Reemplaza con la ruta de tu imagen de fondo
+    background-size: 100% ; // Ajusta el tamaño de la imagen para cubrir todo el contenedor
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    width: 100%; // Ajusta el tamaño del contenedor para ocupar toda la pantalla
+    max-width: 100%; // Máximo ancho del contenedor
+    height: 170vh; // Asegura que el contenedor ocupe toda la altura de la pantalla
+    display: flex;
+    justify-content: center;
+
+  
+    .formulario {
+      background-color: rgba(255, 255, 255, 0.8); // Fondo semi-transparente para que la imagen sea visible
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(5px); // Efecto de desenfoque para mejorar la legibilidad
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 70%;
+      padding: 4em;
+
+        
+        .form-row{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 9px;
+          width: 100%;
+
+          small{
+            color: red;
+          }
+
+          .form-group{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+
+            &:not(:last-child) {
+              margin-right: 40px; // Espacio entre los campos de la misma fila
+            }
+          }
+        }
+
+        .title{
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+
+            h2 {
+                margin-bottom: 20px;
+                
+              }
+        }
+    
+        label,
+        input,
+        select {
+          display: block;
+          margin-bottom: 10px;
+        }
+    
+        input,
+        select {
+          width:calc(100% - 20px);
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+    
+        button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+    
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+    }
+}
