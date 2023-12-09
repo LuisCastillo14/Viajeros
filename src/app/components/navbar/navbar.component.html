@@ -5,7 +5,9 @@
       <span class="nombre2">Mundo</span>
     </a>
     <div class="navbar-buttons">
-      <button class="btn" routerLink="/register">SIGN IN</button>
-      <button class="btn" routerLink="/login">LOG IN</button>
+      <button *ngIf="!authService.isAuthenticated()" class="btn" routerLink="/register">SIGN IN</button>
+      <button *ngIf="!authService.isAuthenticated()" class="btn" routerLink="/login">LOG IN</button>
+      <button *ngIf="authService.isAuthenticated()" class="btn">Ver Perfil</button>
+      <button *ngIf="authService.isAuthenticated()" (click)="authService.logout()" class="btn" routerLink="/login">Cerrar Sesión</button>
     </div>
   </nav>

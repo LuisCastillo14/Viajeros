@@ -10,6 +10,9 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
+import { ListarPublicacionesComponent } from './components/listar-publicacion/listar-publicacion.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +22,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginPageComponent,
     RegisterPageComponent,
     LandingPageComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    CrearPublicacionComponent,
+    ListarPublicacionesComponent
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="header">
+        <div class="botones">
+            <button (click)="tipoPublicacion = 'experiencia'">Experiencia</button>
+            <button (click)="tipoPublicacion = 'recomendacion'">Recomendación</button>
+            <button (click)="tipoPublicacion = 'itinerario'">Itinerario</button>
+        </div>
+    </div>
+    <div class="form-container">
+        <form class="form" [formGroup]="publicacionForm" (ngSubmit)="onSubmit()" *ngIf="tipoPublicacion === 'experiencia'">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" formControlName="titulo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lugar">Lugar</label>
+                <input type="text" id="lugar" formControlName="lugar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" formControlName="descripcion" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imagen">Agrega una foto</label>
+                <input type="file" (change)="onFileSelected($event)" id="imagen" class="form-control">
+            </div>
+            <button type="submit" class="boton">Publicar</button>
+          </form>
+
+
+
+
+
+
+          <form class="form" *ngIf="tipoPublicacion === 'recomendacion'">
+           <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" formControlName="titulo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lugar">Lugar</label>
+                <input type="text" id="lugar" formControlName="lugar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" formControlName="descripcion" class="form-control"></textarea>
+            </div> 
+            <button type="submit" class="boton">Publicar</button>
+          </form>
+
+
+
+
+
+
+          <form class="itinerario" *ngIf="tipoPublicacion === 'itinerario'">
+            <div class="itinerario-container">
+                <div class="iti-header">
+                    <div class="form-header">
+                        <label for="titulo">Título</label> 
+                        <input type="text" for="titulo" formControlName="titulo"> <br>
+                        <label for="titulo">Lugar</label>
+                        <input type="text" for="lugar" formControlName="lugar"> <br>
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" for="descripcion" formControlName="descripcion"> <br>
+                        <label for="descripcion">Duración</label>
+                        <input type="number" for="duracion" formControlName="duracion">
+                        <small style="color:white;">Dias</small> <br>
+                        
+                    </div>
+                    <div class="iti-icono">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="boton">Publicar</button>
+          </form>
+    </div>
+</div>

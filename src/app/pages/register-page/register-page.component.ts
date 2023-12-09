@@ -1,17 +1,34 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-
+import {HttpClient} from '@angular/common/http'
 
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss']
 })
+
+
+
+
 export class RegisterPageComponent {
   forms!: FormGroup;
+  imageUrl!: string;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder, private http: HttpClient){
     this.crearFormulario();
+
+  }
+
+  onFileSelected(event: Event) {
+    const element = event.target as HTMLInputElement;
+    const file = element.files ? element.files[0] : null;
+    if (file) {
+      // Aquí deberías subir el archivo a tu servicio de almacenamiento de archivos
+      // y luego asignar la URL obtenida a `this.imageUrl`.
+      // Simularemos una URL como ejemplo:
+      this.imageUrl = 'https://example.com/path/to/image.jpg';
+    }
   }
 
   get nombreNoValido(){
@@ -21,7 +38,7 @@ export class RegisterPageComponent {
 
   get apellidoNoValido(){
 
-    return this.forms.get('apellido')?.invalid && this.forms.get('apellido')?.touched;
+    return this.forms.get('apellidos')?.invalid && this.forms.get('apellidos')?.touched;
   }
 
   get sexoNoValido(){
@@ -36,7 +53,7 @@ export class RegisterPageComponent {
 
   get correoNoValido(){
 
-    return this.forms.get('correo')?.invalid && this.forms.get('correo')?.touched;
+    return this.forms.get('email')?.invalid && this.forms.get('email')?.touched;
   }
 
   get contrasenaNoValido(){
@@ -54,6 +71,13 @@ export class RegisterPageComponent {
     return this.forms.get('paisVive')?.invalid && this.forms.get('paisVive')?.touched;
   }
 
+  get tipoNoValido(){
+
+    return this.forms.get('tipo')?.invalid && this.forms.get('tipo')?.touched;
+  }
+
+  
+
 
 
 
@@ -61,61 +85,41 @@ export class RegisterPageComponent {
 
     this.forms = this.fb.group({
       nombre:['', Validators.required],
-      apellido:['', Validators.required],
-      sexo:['', Validators.required],
-      fecha:['', Validators.required],
-      correo:['', [Validators.required , Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      apellidos:['', Validators.required],
+      Sexo:['', Validators.required],
+      fechaNacimiento:['', Validators.required],
+      email:['', [Validators.required , Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      passwordConfirm: ['', Validators.required],
       paisOrigen: ['', Validators.required],
-      paisVive: ['', Validators.required]
-    },{
-
-      Validators:this.passwordIguales('password','passwordConfirm')
-
-    }
-    )
+      paisVive: ['', Validators.required],
+      tipoViajero: ['', Validators.required],
+      fotoPerfilUrl: [''],
+      descripcion: ['']
+    })
 
   }
 
   registrar(){
 
     console.log(this.forms);
-    this.invalidConfirm();
 
-    if(this.forms.invalid){
+    if(this.forms.valid){
 
-      return Object.values(this.forms.controls).forEach(control =>{
-        control.markAllAsTouched();
-      })
+      const formData = this.forms.value;
+      this.http.post('http://localhost:8080/api/v1/auth/registrar', formData, {responseType: 'text'}).subscribe(
+        response => {
+          console.log(response);
+          alert(response);
+        },
+        error => {
+          console.log(error.status, error.error)
+            alert(error.error)
+        }
+        
+      )
 
     }
   }
-
-  invalidConfirm(){
-    const pass1 = this.forms.get('password')?.value;
-    const pass2 = this.forms.get('passwordConfirm')?.value;
-
-    if(pass1 !== pass2){
-        return true;
-    }else{
-      return true;
-    }
-  }
-
-  passwordIguales(pass1name:string, pass2name:string){
-    return(formGroup:FormGroup)=>{
-      const pass1Control = formGroup.get(pass1name);
-      const pass2Control = formGroup.get(pass2name);
-
-      if(pass1Control?.value === pass2Control?.value){
-
-        pass2Control?.setErrors(null);
-
-      }else{
-        pass2Control?.setErrors({noEsIgual:true})
-      }
-    }
-  }
+  
 
 }

@@ -1,0 +1,68 @@
+.publicaciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+  
+    .publicacion-card {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      .titulo {
+        font-size: 1.5rem;
+        color: #333;
+        padding: 1rem;
+        margin: 0;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #eaeaea;
+      }
+      .usuario {
+        font-size: 1rem;
+        color: #333;
+        padding: 1rem;
+        margin: 0;
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #eaeaea;
+      }
+  
+      .descripcion {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        color: #666;
+      }
+  
+      .lugar, .fecha {
+        padding: 0.5rem 1rem;
+        color: #999;
+        font-style: italic;
+      }
+  
+      .imagen-publicacion {
+        width: 100%; /* Adjust width as necessary, could be in pixels or percentage */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 400px; /* You can set a maximum height */
+        object-fit: cover; /* This will cover the area of the image tag without stretching the image */
+      }
+    }
+  
+    p {
+      margin: 0;
+      padding: 0.5rem 1rem;
+    }
+  
+    @media (max-width: 768px) {
+      .publicacion-card {
+        width: 90%;
+      }
+    }
+  }

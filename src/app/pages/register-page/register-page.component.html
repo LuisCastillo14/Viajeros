@@ -12,14 +12,14 @@
           </div>
           <div class="form-group">
             <label for="apellidos">Apellido:</label>
-            <input type="text" id="apellidos" formControlName="apellido" name="apellidos" [class.is-invalid]="apellidoNoValido" required>
+            <input type="text" id="apellidos" formControlName="apellidos" name="apellidos" [class.is-invalid]="apellidoNoValido" required>
             <small *ngIf="apellidoNoValido">*Este campos es obligatorio</small>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="sexo">Sexo: </label>
-            <select id="sexo" name="sexo" formControlName="sexo" [class.is-invalid]="sexoNoValido" required>
+            <label for="Sexo">Sexo: </label>
+            <select id="Sexo" name="Sexo" formControlName="Sexo" [class.is-invalid]="sexoNoValido" required>
                 <option value="">Selecciona una opción</option>
                 <option value="MASCULINO">MASCULINO</option>
                 <option value="FEMENINO">FEMENINO</option>
@@ -28,16 +28,16 @@
             <small *ngIf="sexoNoValido">*Este campos es obligatorio</small>
           </div>
           <div class="form-group">
-            <label for="fecha">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha" name="fecha" formControlName="fecha" [class.is-invalid]="fechaNoValido" required>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" formControlName="fechaNacimiento" [class.is-invalid]="fechaNoValido" required>
             <small *ngIf="fechaNoValido">*Este campos es obligatorio</small>
           </div>
           
         </div>
         <div class="form-row">
             <div class="form-group">
-              <label for="correo">Correo: </label>
-              <input type="email" id="correo" name="correo" formControlName="correo" [class.is-invalid]="correoNoValido" required>
+              <label for="email">Correo: </label>
+              <input type="email" id="email" name="email" formControlName="email" [class.is-invalid]="correoNoValido" required>
               <small *ngIf="correoNoValido">*Ingrese un correo válido</small>
             </div>
         </div>
@@ -49,90 +49,173 @@
             </div>
             <div class="form-group">
                 <label for="passwordConfirm">Confirmar Contraseña:</label>
-                <input type="password" id="passwordConfirm" name="passwordConfirm" formControlName="passwordConfirm" [class.is-invalid]="invalidConfirm" required>
+                <input type="password" id="passwordConfirm" name="passwordConfirm">
             </div>
         </div>
         <div class="form-row">
           <div class="form-group">
               <label for="paisOrigen">Pais de origen:</label>
-              <select formControlName="paisOrigen" aria-placeholder="Seleccione un pais">
-                <option value="AF">Afganistán</option>
-                <option value="DE">Alemania</option>
-                <option value="SA">Arabia Saudita</option>
-                <option value="AR">Argentina</option>
-                <option value="AU">Australia</option>
-                <option value="AT">Austria</option>
-                <option value="BE">Bélgica</option>
-                <option value="BO">Bolivia</option>
-                <option value="BR">Brasil</option>
-                <option value="CA">Canadá</option>
-                <option value="CL">Chile</option>
-                <option value="CN">China</option>
-                <option value="CO">Colombia</option>
-                <option value="CR">Costa Rica</option>
-                <option value="CU">Cuba</option>
-                <option value="DK">Dinamarca</option>
-                <option value="EC">Ecuador</option>
-                <option value="SV">El Salvador</option>
-                <option value="AE">Emiratos Árabes Unidos</option>
-                <option value="ES">España</option>
-                <option value="US">Estados Unidos</option>
-                <option value="PH">Filipinas</option>
-                <option value="FI">Finlandia</option>
-                <option value="FR">Francia</option>
-                <option value="GR">Grecia</option>
-                <option value="GT">Guatemala</option>
-                <option value="HN">Honduras</option>
-                <option value="IN">India</option>
-                <option value="ID">Indonesia</option>
-                <option value="IE">Irlanda</option>
-                <option value="IL">Israel</option>
-                <option value="IT">Italia</option>
-                <option value="JP">Japón</option>
-                <option value="KR">Corea del Sur</option>
-                <option value="MY">Malasia</option>
-                <option value="MA">Marruecos</option>
-                <option value="MX">México</option>
-                <option value="NI">Nicaragua</option>
-                <option value="NG">Nigeria</option>
-                <option value="NO">Noruega</option>
-                <option value="NL">Países Bajos</option>
-                <option value="PA">Panamá</option>
-                <option value="PY">Paraguay</option>
-                <option value="PE">Perú</option>
-                <option value="PL">Polonia</option>
-                <option value="PT">Portugal</option>
-                <option value="GB">Reino Unido</option>
-                <option value="DO">República Dominicana</option>
-                <option value="CZ">República Checa</option>
-                <option value="RU">Rusia</option>
-                <option value="SE">Suecia</option>
-                <option value="CH">Suiza</option>
-                <option value="TH">Tailandia</option>
-                <option value="TR">Turquía</option>
-                <option value="UA">Ucrania</option>
-                <option value="UY">Uruguay</option>
-                <option value="VE">Venezuela</option>
-                <option value="VN">Vietnam</option>
-                <option value="ZA">Sudáfrica</option>
+              <select name="paisorigen" formControlName="paisOrigen" aria-placeholder="Seleccione un pais">
+                <option value="Afganistán">Afganistán</option>
+                <option value="Alemania">Alemania</option>
+                <option value="Arabia Saudita">Arabia Saudita</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Bélgica">Bélgica</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Canadá">Canadá</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Dinamarca">Dinamarca</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Emiratos Árabes Unidos">Emiratos Árabes Unidos</option>
+                <option value="España">España</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Filipinas">Filipinas</option>
+                <option value="Finlandia">Finlandia</option>
+                <option value="Francia">Francia</option>
+                <option value="Grecia">Grecia</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Honduras">Honduras</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Irlanda">Irlanda</option>
+                <option value="Israel">Israel</option>
+                <option value="Italia">Italia</option>
+                <option value="Japón">Japón</option>
+                <option value="Corea del Sur">Corea del Sur</option>
+                <option value="Malasia">Malasia</option>
+                <option value="Marruecos">Marruecos</option>
+                <option value="México">México</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Noruega">Noruega</option>
+                <option value="Países Bajos">Países Bajos</option>
+                <option value="Panamá">Panamá</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Perú">Perú</option>
+                <option value="Polonia">Polonia</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Reino Unido">Reino Unido</option>
+                <option value="República Dominicana">República Dominicana</option>
+                <option value="República Checa">República Checa</option>
+                <option value="Rusia">Rusia</option>
+                <option value="Suecia">Suecia</option>
+                <option value="Suiza">Suiza</option>
+                <option value="Tailandia">Tailandia</option>
+                <option value="Turquía">Turquía</option>
+                <option value="Ucrania">Ucrania</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Sudáfrica">Sudáfrica</option>
               </select>
               <small *ngIf="paisOrigenNoValido">*Este campos es obligatorio</small>
           </div>
           <div class="form-group">
-              <label for="passwordConfirm">Confirmar Contraseña:</label>
-              <input type="password" id="passwordConfirm" name="passwordConfirm" formControlName="passwordConfirm" [class.is-invalid]="invalidConfirm" required>
+            <label for="paisVive">Pais donde Vive:</label>
+            <select name="paisVive" formControlName="paisVive" placeholder="Seleccione un pais">
+              <option value="Afganistán">Afganistán</option>
+                <option value="Alemania">Alemania</option>
+                <option value="Arabia Saudita">Arabia Saudita</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Australia">Australia</option>
+                <option value="Austria">Austria</option>
+                <option value="Bélgica">Bélgica</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Canadá">Canadá</option>
+                <option value="Chile">Chile</option>
+                <option value="China">China</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Dinamarca">Dinamarca</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Emiratos Árabes Unidos">Emiratos Árabes Unidos</option>
+                <option value="España">España</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Filipinas">Filipinas</option>
+                <option value="Finlandia">Finlandia</option>
+                <option value="Francia">Francia</option>
+                <option value="Grecia">Grecia</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Honduras">Honduras</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Irlanda">Irlanda</option>
+                <option value="Israel">Israel</option>
+                <option value="Italia">Italia</option>
+                <option value="Japón">Japón</option>
+                <option value="Corea del Sur">Corea del Sur</option>
+                <option value="Malasia">Malasia</option>
+                <option value="Marruecos">Marruecos</option>
+                <option value="México">México</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Noruega">Noruega</option>
+                <option value="Países Bajos">Países Bajos</option>
+                <option value="Panamá">Panamá</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Perú">Perú</option>
+                <option value="Polonia">Polonia</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Reino Unido">Reino Unido</option>
+                <option value="República Dominicana">República Dominicana</option>
+                <option value="República Checa">República Checa</option>
+                <option value="Rusia">Rusia</option>
+                <option value="Suecia">Suecia</option>
+                <option value="Suiza">Suiza</option>
+                <option value="Tailandia">Tailandia</option>
+                <option value="Turquía">Turquía</option>
+                <option value="Ucrania">Ucrania</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Sudáfrica">Sudáfrica</option>
+            </select>
+            <small *ngIf="paisViveNoValido">*Este campos es obligatorio</small>
           </div>
-      </div>
+          
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tipoViajero">Tipo de Viajero:</label>
+            <select name="tipoViajero" formControlName="tipoViajero" placeholder="">
+              <option value="NOVATO">Viajero Novato</option>
+              <option value="EXPERTO">Viajero Experto</option>
+            </select>
+          </div>
+        </div>
+    <!--<div class="form-row">
+          <div class="form-group">
+            <label for="foto">Suba una foto de perfil:</label>
+            <input type="file" id="correo" name="correo" formControlName="foto" [class.is-invalid]="correoNoValido" required>
+            
+          </div>
+        </div> -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fotoPerfilUrl">link de la foto de perfil:</label>
+            <input type="text" id="fotoPerfilUrl" name="fotoPerfilUrl" formControlName="fotoPerfilUrl">
+            
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion" formControlName="descripcion" rows="4" placeholder="Escribe aquí tu descripción..."></textarea>
+          </div>
+        </div>
         <button type="submit" >Registrar</button>
       </form>
-      <hr>
-      <h3>Formulario</h3>
-      <pre>Estado formulario:{{forms.status}}
-
-      </pre>
-      <pre>
-        {{forms.value | json}}
-      </pre>
     </div>
   </div>
   

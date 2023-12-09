@@ -1,0 +1,16 @@
+<div class="publicaciones-container">
+    <div *ngFor="let publicacion of publicaciones" class="publicacion-card">
+      <h2 class="titulo">{{ publicacion.titulo }}</h2>
+      <h1 class="usuario">{{publicacion.nombreUsuario}} </h1>
+      <p class="descripcion">{{ publicacion.descripcion }}</p>
+      <p class="lugar">{{ publicacion.lugar }}</p>
+      <p class="fecha">{{ publicacion.fechaCreacion }}</p>
+      <img *ngIf="publicacion.imagenBase64" [src]="publicacion.imagenBase64" class="imagen-publicacion"/>
+
+    </div>
+      
+    <!-- Mensaje si no se encontraron publicaciones -->
+    <div *ngIf="publicaciones.length === 0">
+      <p>No se encontraron publicaciones.</p>
+    </div>
+  </div>

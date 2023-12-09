@@ -23,6 +23,8 @@
       padding: 4em;
 
         
+
+        
         .form-row{
           display: flex;
           justify-content: space-between;
@@ -70,6 +72,9 @@
           border: 1px solid #ccc;
           border-radius: 5px;
         }
+        .descripcion{
+          height: 10em;
+        }
     
         button {
           background-color: #007bff;
@@ -78,6 +83,8 @@
           padding: 10px 20px;
           border-radius: 5px;
           cursor: pointer;
+          text-align: center;
+          align-items: center;
     
           &:hover {
             background-color: #0056b3;
