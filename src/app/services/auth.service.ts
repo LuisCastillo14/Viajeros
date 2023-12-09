@@ -16,7 +16,7 @@ export class AuthService {
 
    login(email: string, password: string): Observable<{token: string}> {
     // Nota que estamos retornando el Observable aquí en lugar de suscribirnos
-    return this.http.post<{token: string}>('http://localhost:8080/api/v1/auth/login', {email, password});
+    return this.http.post<{token: string}>('https://viajerosupao.onrender.com/api/v1/auth/login', {email, password});
   }
 
   getToken(): string | null {

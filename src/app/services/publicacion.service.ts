@@ -9,8 +9,8 @@ import { AuthService } from './auth.service';
 })
 
 export class PublicacionService {
-  private apiUrl1 = 'http://localhost:8080/api/publicaciones/crearPublicacion';
-  private apiUrl2 = 'http://localhost:8080/api/publicaciones/listar';
+  private apiUrl1 = 'https://viajerosupao.onrender.com/api/publicaciones/crearPublicacion';
+  private apiUrl2 = 'https://viajerosupao.onrender.com/api/publicaciones/listar';
 
   constructor( private http: HttpClient, private authService: AuthService) { }
 
