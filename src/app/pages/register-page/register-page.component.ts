@@ -106,7 +106,7 @@ export class RegisterPageComponent {
     if(this.forms.valid){
 
       const formData = this.forms.value;
-      this.http.post('http://localhost:8080/api/v1/auth/registrar', formData, {responseType: 'text'}).subscribe(
+      this.http.post('https://viajerosupao.onrender.com/api/v1/auth/registrar', formData, {responseType: 'text'}).subscribe(
         response => {
           console.log(response);
           alert(response);
